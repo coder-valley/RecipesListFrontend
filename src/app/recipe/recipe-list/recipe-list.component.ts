@@ -24,13 +24,13 @@ export class RecipeListComponent implements OnInit {
   }
 
   public getAllRecipesList: any = () => {
-    this.appService.postFunction('http://starlord.hackerearth.com/recipe','getAllRecipe')
-    .subscribe( (backEndResponse) => {
+    const backEndResponse = this.appService.getData()
+
+    if(backEndResponse) {
       localStorage.setItem('allRecipes', JSON.stringify(backEndResponse))
       this.allRecipes = _.groupBy(backEndResponse, 'category')
-      console.log(this.allRecipes)
-    })
-
+      // console.log(this.allRecipes)
+    }
   }
 
   public detailedRecipe: any = (recipeId, modalStatus) => {

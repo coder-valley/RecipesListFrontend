@@ -33,10 +33,12 @@ export class DetailedRecipeComponent implements OnInit {
   }
 
   public getDetailedRecipe: any = () => {
-    this.appService.postFunction('http://starlord.hackerearth.com/recipe', this.recipeId)
-    .subscribe( (backEndResponse) => {
+    const backEndResponse = this.appService.getData()
+
+    if(backEndResponse) {
       this.recipeData = backEndResponse.filter(recipe => recipe.id === this.recipeId)
-    })
+
+    }
   }
 
   public comment: any = () => {
