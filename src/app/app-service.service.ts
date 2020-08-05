@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-
+// import{ AllRecipes } from 
 @Injectable({
   providedIn: 'root'
 })
