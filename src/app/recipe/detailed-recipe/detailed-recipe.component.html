@@ -1,0 +1,80 @@
+<section>
+    <div class="container">
+        <div class="row" *ngIf="recipeData">
+            <div class="col-12 goBack">
+                <button class="arrow" (click)="backButton()"> <i class="fas fa-arrow-left"></i> &nbsp;&nbsp;Go Back</button>
+            </div>
+            <div class="col-md-6 col-12">
+                <img src={{recipeData[0].image}} class="img-responsive rounded" style="width:100%" alt="recipe image">
+
+                <div style="margin-top: 6%;">
+                    <h5>Ingredients</h5>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim.
+                    </p>
+
+                    <h5>How to prepare</h5>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim <br> <br> veniam, quis nostrud exercitation
+                        ullamco
+
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate <br><br> velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                        cupidatat
+                        ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+                        ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                        dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum
+                        quia dolor sit amet.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-12" style="text-align: right;">
+                <p>RECIPE</p>
+                <h4>{{ recipeData[0].name | uppercase }}</h4>
+                <span style="background-color: black; color: white; width: 20px; margin-right: 1%;">4/5</span>
+                <span class="starRating">&#9733;</span>
+                <span class="starRating">&#9733;</span>
+                <span class="starRating">&#9733;</span>
+                <span class="starRating">&#9733;</span>
+
+                <p>DESCRIPTION</p>
+
+                <p style="margin-left: 30%; color: black;">{{ recipeData[0].description }}</p>
+                <div class="buttons">
+                    <div class="circle">
+                        <b>8</b> <br> <span style="font-size: 14px;">ingredients</span>
+                    </div>
+                    <div class="circle">
+                        <b>220</b> <br>
+                        <span style="font-size: 14px;">bucks</span>
+                    </div>
+                    <div class="circle">
+                        <b>25</b> <br>
+                        <span style="font-size: 14px;">minutes</span>
+                    </div>
+                </div>
+                <h6>
+                    FAVOURITE THIS RECIPE <img style="margin-left: 3%;"
+                        src="../../../assets/icon/Icon feather-heart-color.png" alt="">
+                </h6>
+
+                <hr style="margin-left: 16%; margin-bottom: 6%;">
+
+                <div class="comments">
+                    <p style="text-align: left; margin-bottom: 2%; margin-left: 9%;">ADD COMMENTS</p>
+                    <textarea placeholder="Type somethingh here..."></textarea>
+                    <button class="commButton" (click)="comment()">ADD COMMENT</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

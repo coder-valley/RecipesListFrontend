@@ -1,0 +1,155 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p id="categoryText">CATEGORY</p>
+            </div>
+
+            <div *ngFor=" let recipes of allRecipes | keyvalue" style="width: 100%;">
+                <h5> {{ recipes.key | uppercase }}</h5>
+                <div class="row">
+                    <div class="card-columns">
+                        <div class="col-md-4 col-12" *ngFor=" let recipeDetails of recipes.value">
+                            <div class="card">
+                                <div class="tag">
+                                  <span *ngIf="recipeDetails.label">{{ recipeDetails.label }}</span>  
+                                  <span  *ngIf="!recipeDetails.label">Spicy</span>  
+
+                                </div>
+                                <img loading="lazy" class="rounded" src="{{ recipeDetails.image }}"
+                                    alt="{{ recipeDetails.name }}" style="width:100%">
+
+                                <div class="card-body">
+                                    <h4 class="card-title">{{ recipeDetails.name }}/&#36;{{ recipeDetails.price }}</h4>
+                                    <p class="card-text" style="margin-bottom: 0px;">
+                                        <img src="../../../assets/icon/Icon feather-clock.png" alt="clock">&nbsp;&nbsp;40 mins
+                                    </p>
+                                    <p class="card-text">{{ recipeDetails.description }}</p>
+                                </div>
+                                <div class="overlay">
+                                    <div class="middleButton">
+                                        <button class="overlayButton"
+                                            (click)="detailedRecipe(recipeDetails.id, 'none')">View More</button>
+                                        <button class="overlayButton"
+                                            (click)="detailedRecipe(recipeDetails.id, 'openModal')" data-toggle="popup"
+                                            data-target="#myPopup">Quick View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="modalSection">
+    <div class="popup" id="myModal" style="display: block !important;" *ngIf="detailedRecipeItem">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">{{ detailedRecipeItem[0].name }}</h4>
+                    <button type="button" class="close" data-dismiss="modal"
+                        (click)="openDialog('none','closeModal')">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <section>
+                        <div class="container">
+                            <div class="row" *ngIf="detailedRecipeItem">
+                                <div class="col-6">
+                                    <img src={{detailedRecipeItem[0].image}} class="img-responsive rounded"
+                                        style="width:100%" alt="recipe image">
+
+                                    <div style="margin-top: 6%;">
+                                        <h5>Ingredients</h5>
+
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut
+                                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                            exercitation ullamco
+                                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                            reprehenderit in
+                                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                                            occaecat cupidatat
+                                            non proident, sunt in culpa qui officia deserunt mollit anim.
+                                        </p>
+
+                                        <h5>How to prepare</h5>
+
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut
+                                            labore et dolore magna aliqua. Ut enim ad minim <br> <br> veniam, quis
+                                            nostrud exercitation
+                                            ullamco
+
+                                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                            reprehenderit in
+                                            voluptate <br><br> velit esse cillum dolore eu fugiat nulla pariatur.
+                                            Excepteur sint occaecat
+                                            cupidatat
+                                            ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                                            explicabo. Nemo enim
+                                            ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                                            consequuntur magni
+                                            dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+                                            qui dolorem ipsum
+                                            quia dolor sit amet.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-12" style="text-align: right;">
+                                    <p>RECIPE</p>
+                                    <h4>{{ detailedRecipeItem[0].name | uppercase }}</h4>
+                                    <span
+                                        style="background-color: black; color: white; width: 20px; margin-right: 1%;">4/5</span>
+                                    <span class="starRating">&#9733;</span>
+                                    <span class="starRating">&#9733;</span>
+                                    <span class="starRating">&#9733;</span>
+                                    <span class="starRating">&#9733;</span>
+
+                                    <p>DESCRIPTION</p>
+
+                                    <p style="margin-left: 30%; color: black;">{{ detailedRecipeItem[0].description }}
+                                    </p>
+                                    <div class="buttons">
+                                        <div class="circle">
+                                            <b>8</b> <br> <span style="font-size: 14px;">ingredients</span>
+                                        </div>
+                                        <div class="circle">
+                                            <b>220</b> <br>
+                                            <span style="font-size: 14px;">bucks</span>
+                                        </div>
+                                        <div class="circle">
+                                            <b>25</b> <br>
+                                            <span style="font-size: 14px;">minutes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        (click)="openDialog('none','closeModal')">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</section>
