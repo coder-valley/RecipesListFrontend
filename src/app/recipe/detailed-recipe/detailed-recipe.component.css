@@ -1,0 +1,84 @@
+.rounded {
+    border-radius: 20px !important;
+}
+h5{
+    font-weight: 500 !important;
+    margin-bottom: 4%;
+    font-size: 20px;
+}
+p {
+    font-weight: 600 !important;
+    color: #b2aeae;
+    font-size: 16px !important;
+    margin-bottom: 5%;
+}
+h4{
+    font-size: 20px !important;
+    font-weight: 700 !important;
+
+}
+
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    background: #000
+  }
+
+  .buttons{
+    margin-left: 40%;
+    margin-bottom: 15%;
+    justify-content: space-evenly;
+    display: flex;
+  }
+
+  .starRating {
+    font-size: 20px;
+    margin: 0 1%;
+  }
+
+  h6{
+    font-weight: 700 !important;
+    font-size: 18px;
+  }
+
+  .comments{
+    float: left;
+    margin-left: 16%;
+  }
+
+  textarea{
+    resize: none;
+    border: none;
+    height: 147px;
+    width: 414px;
+    padding: 5%;
+    border-radius: 20px;
+  }
+
+  .commButton{
+    border-radius: 20px;
+    width: 90%;
+    height: 43px;
+    margin-top: 3%;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+  }
+
+  .goBack{
+    margin-bottom: 1%;
+  }
+  .arrow {
+    font-size: 19px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    outline: none;
+  }

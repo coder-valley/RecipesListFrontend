@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { 
+    height: 100%;
+    background-color: #f0f0f0 !important;
+    width:  100%;
+}
+body {
+    overflow-x: hidden;
+}
+
+#content {
+    position: relative;
+}
+#content img {
+    position: absolute;
+    top: -255px;
+    right: -75px;
+}
+
+#centeredImg {
+    position: absolute;
+    top: 440px;
+    left: 235px;
+}
+
+#footerContent img {
+    position: absolute;
+    bottom: -652px;
+    left: -72px;
+}
+
+#jalapenoImage {
+    position: absolute;
+    bottom: 0px;
+    right: 115px;
+}
+
+#cheeseImage {
+    position: absolute;
+    bottom: -182px;
+    right: 4px;
+}
+
+.mat-form-field-infix, .mat-form-field-appearance-legacy, .mat-form-field-infix {
+    padding: 0px !important;
+  }
+.mat-form-field-label-wrapper {
+    left: 50px !important;
+}
+
+mark {
+    background-color: yellow !important;
+}
+
+
+@media (max-width:720px) {
+  
+  
+  
+}
